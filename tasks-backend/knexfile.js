@@ -6,7 +6,7 @@ module.exports = {
   connection: {
     database: 'tasks',
     user: 'postgres',
-    password: '123'
+    password: '123456'
   },
   pool: {
     min: 2,
@@ -16,7 +16,7 @@ module.exports = {
     tableName: 'knex_migrations'
   }
 
-  
+
 
 
 };

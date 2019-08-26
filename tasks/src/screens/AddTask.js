@@ -51,7 +51,8 @@ export default class AddTask extends Component {
             <Modal onRequestClose={this.props.onCancel}
                 visible={this.props.isVisible}
                 animatedType='slide'
-                transparent={true}>
+                transparent={true}
+                onShow={() => this.setState({ ...this.getInitialState() })}>
                 <TouchableWithoutFeedback onPress={this.props.onCancel}>
                     <View style={styles.offset}></View>
                 </TouchableWithoutFeedback>
@@ -69,14 +70,15 @@ export default class AddTask extends Component {
                         placeholder="select date"
                         customStyles={{
                             dateIcon: {
-                              position: 'absolute',
-                              left: 0,
-                              top: 4,
-                              marginLeft: 0
+                                position: 'absolute',
+                                left: 0,
+                                top: 4,
+                                marginLeft: 0
                             },
                             dateInput: {
-                              marginLeft: 36
-                            }}}/>
+                                marginLeft: 36
+                            }
+                        }} />
                     <View style={{
                         flexDirection: 'row',
                         justifyContent: 'flex-end'
