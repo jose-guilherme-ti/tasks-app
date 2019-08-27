@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { 
     createSwitchNavigator,
@@ -8,57 +8,57 @@ import Agenda from './screens/Agenda'
 import Auth from './screens/Auth'
 import commonStyles from './commonStyles'
 // import { Container } from './styles';
-
 const MenuRoutes = {
-    Today:{
+    Today: {
         name: 'Today',
-        screen: props=><Agenda title='Hoje' daysAhead={0} {...props}/>,
-        navigationOptions:{
+        screen: props => 
+            <Agenda title='Hoje' daysAhead={0} {...props} />,
+        navigationOptions: {
             title: 'Hoje'
         }
     },
-    Tomorrow:{
+    Tomorrow: {
         name: 'Tomorrow',
-        screen:props => <Agenda title='Amanhã' daysAhead={1} {...props}/>,
-        navigationOptions:{
+        screen: props =>
+            <Agenda title='Amanhã' daysAhead={1} {...props} />,
+        navigationOptions: {
             title: 'Amanhã'
         }
     },
-    week:{
+    Week: {
         name: 'Week',
-        screen: props => <Agenda title='Semana' daysAhead={7} {...props}/>,
-        navigationOptions:{
+        screen: props => 
+            <Agenda title='Semana' daysAhead={7} {...props} />,
+        navigationOptions: {
             title: 'Semana'
         }
-
     },
-    Month:{
+    Month: {
         name: 'Month',
-        screen: props => <Agenda title='Mês' daysAhead={30} {...props}/>,
-        navigationOptions:{
+        screen: props => 
+            <Agenda title='Mês' daysAhead={30} {...props} />,
+        navigationOptions: {
             title: 'Mês'
         }
-
     }
-
 }
 
 
-const MenuConfig ={
+const MenuConfig = {
     initialRouteName: 'Today',
-    contentOptions:{
-        labelStyle:{
+    contentOptions: {
+        labelStyle: {
             fontFamily: commonStyles.fontFamily,
-            fontWeight:'normal',
+            fontWeight: 'normal',
             fontSize: 20
         },
-        activeLabelStyle:{
-            color: '#080'
+        activeLabelStyle: {
+            color: '#080',
         }
     }
 }
 
-const MenuNavigator = createAppContainer(createDrawerNavigator(MenuRoutes, MenuConfig))
+const MenuNavigator = createDrawerNavigator(MenuRoutes, MenuConfig)
 
 
 const MainRoutes = {
@@ -72,8 +72,8 @@ const MainRoutes = {
     }
 }
 
-const MainNavigator =  createAppContainer(createSwitchNavigator(MainRoutes, {
+const MainNavigator =  createSwitchNavigator(MainRoutes, {
     initialRouteName: 'Auth'
-}))
+})
 
-export default MainNavigator
+export default createAppContainer(MainNavigator)
