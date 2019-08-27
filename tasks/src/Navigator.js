@@ -7,6 +7,8 @@ import {
 import Agenda from './screens/Agenda'
 import Auth from './screens/Auth'
 import commonStyles from './commonStyles'
+import Menu from   './screens/Menu' 
+import AuthOrApp from './screens/AuthOrApp'
 // import { Container } from './styles';
 const MenuRoutes = {
     Today: {
@@ -46,6 +48,7 @@ const MenuRoutes = {
 
 const MenuConfig = {
     initialRouteName: 'Today',
+    contentComponent: Menu,
     contentOptions: {
         labelStyle: {
             fontFamily: commonStyles.fontFamily,
@@ -62,6 +65,10 @@ const MenuNavigator = createDrawerNavigator(MenuRoutes, MenuConfig)
 
 
 const MainRoutes = {
+    Loading: {
+        name: 'Loading',
+        screen: AuthOrApp
+    },
     Auth: {
         name: 'Auth',
         screen: Auth
@@ -73,7 +80,7 @@ const MainRoutes = {
 }
 
 const MainNavigator =  createSwitchNavigator(MainRoutes, {
-    initialRouteName: 'Auth'
+    initialRouteName: 'Loading'
 })
 
 export default createAppContainer(MainNavigator)
