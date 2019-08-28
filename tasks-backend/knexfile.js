@@ -2,11 +2,12 @@
 
 module.exports = {
 
-  client: 'postgresql',
+  client: 'mysql',
   connection: {
-    database: 'tasks',
-    user: 'postgres',
-    password: '123456'
+    host: '192.81.170.13',
+    database: 'souzaadv_apifindcode',
+    user: 'souzaadv_qr',
+    password: '&j?%2ysR3#Li'
     //password: '123'
   },
   pool: {
