@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
-import { View, ActivityIndicator, StyleSheet, AsyncStorage } from 'react-native';
+import { View, ActivityIndicator, StyleSheet } from 'react-native';
+import AsyncStorage  from '@react-native-community/async-storage';
 
 // import { Container } from './styles';
 
 export default class AuthOrApp extends Component {
 
     componentWillMount = async () => {
-        const json = await AsyncStorage.getItem('userDate')
+        const json = await AsyncStorage.getItem('userData')
         const userData = JSON.parse(json) || {}
 
         if (userData.token) {
@@ -28,11 +29,11 @@ export default class AuthOrApp extends Component {
         )
     }
 }
-    var styles = StyleSheet.create({
-        container:{
-            flex:1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: 'black'
-        }
-    })
+var styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'black'
+    }
+})

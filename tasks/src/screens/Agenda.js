@@ -8,7 +8,6 @@ import {
     FlatList,
     TouchableOpacity,
     Platform,
-    AsyncStorage
 
 } from 'react-native';
 import axios from 'axios';

@@ -5,15 +5,14 @@ import {
     StyleSheet,
     ImageBackground,
     TouchableOpacity,
-    Alert,
-    AsyncStorage
+    Alert
 } from 'react-native';
 import axios from 'axios'
 import { server, showError } from '../common'
 import AuthInput from '../components/AuthInput'
 import commonStyles from '../commonStyles'
 import backgroundImage from '../../assets/imgs/login.jpg'
-
+import AsyncStorage  from '@react-native-community/async-storage';
 export default class Auth extends Component {
     state = {
         stageNew: false,
